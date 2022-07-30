@@ -1,0 +1,36 @@
+﻿@using NLayer.Core.DTOs
+@model ProductDto
+
+
+<form asp-controller="Products" asp-action="Save" method="post">
+    <div asp-validation-summary="All"></div>
+
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Stock"></label>
+        <input asp-for="Stock" />
+        <span asp-validation-for="Stock"></span>
+
+    </div>
+    <div class="form-group">
+        <label asp-for="Price"></label>
+        <input asp-for="Price" />
+        <span asp-validation-for="Price"></span>
+
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CategoryId"></label>
+        <select asp-for="CategoryId" asp-items="ViewBag.Categories"> </select>
+        <span asp-validation-for="CategoryId"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="submit"/>
+    </div>
+
+</form>

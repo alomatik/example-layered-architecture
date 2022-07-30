@@ -1,0 +1,36 @@
+﻿@using NLayer.Core.DTOs
+@model IList<ProductDto>
+
+
+<a asp-controller="Products" asp-action="Save">Add Product</a>
+
+@foreach (var item in Model)
+{
+    <ul>
+        <li>
+            @item.Id
+        </li>
+        <li>
+            @item.CategoryId
+        </li>
+        <li>
+            @item.Name
+        </li>
+        <li>
+            @item.Price
+        </li>
+        <li>
+            @item.Stock
+        </li>
+        <li>
+            @item.UpdatedDate
+        </li>
+        <li>
+            <a asp-controller="Products" asp-action="Update" asp-route-Id="@item.Id"> Update</a>
+        </li>
+         <li>
+            <a asp-controller="Products" asp-action="Delete" asp-route-Id="@item.Id"> Delete</a>
+        </li>
+    </ul>
+
+}
